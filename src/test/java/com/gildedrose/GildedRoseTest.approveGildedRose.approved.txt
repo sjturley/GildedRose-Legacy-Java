@@ -1,1 +1,1 @@
-[Item{name='my item', sellIn=-1, quality=0}]
+[my item, 0, 0] => [Item{name='my item', sellIn=-1, quality=0}] 
