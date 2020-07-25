@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import org.approvaltests.Approvals;
 import org.junit.Test;
 
 public class GildedRoseTest {
@@ -13,5 +14,7 @@ public class GildedRoseTest {
             }
         };
         gildedRose.updateQuality();
+
+        Approvals.verify(gildedRose.items);
     }
 }
