@@ -3,6 +3,8 @@ package com.gildedrose;
 import org.approvaltests.Approvals;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class GildedRoseTest {
 
     @Test
@@ -15,6 +17,6 @@ public class GildedRoseTest {
         };
         gildedRose.updateQuality();
 
-        Approvals.verify(gildedRose.items);
+        Approvals.verify(Arrays.toString(gildedRose.items));
     }
 }
