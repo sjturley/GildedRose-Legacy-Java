@@ -9,6 +9,11 @@ public class GildedRoseTest {
 
     @Test
     public void approveGildedRose() {
+        String response = updateQuality();
+        Approvals.verify(response);
+    }
+
+    private String updateQuality() {
         GildedRose gildedRose = new GildedRose() {
             @Override
             public Item[] getItems() {
@@ -17,6 +22,6 @@ public class GildedRoseTest {
         };
         gildedRose.updateQuality();
 
-        Approvals.verify(Arrays.toString(gildedRose.items));
+        return Arrays.toString(gildedRose.items);
     }
 }
