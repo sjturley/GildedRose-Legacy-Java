@@ -9,15 +9,15 @@ public class GildedRoseTest {
 
     @Test
     public void approveGildedRose() {
-        String response = updateQuality();
+        String response = updateQuality("my item", 0, 0);
         Approvals.verify(response);
     }
 
-    private String updateQuality() {
+    private String updateQuality(String name, int sellIn, int quality) {
         GildedRose gildedRose = new GildedRose() {
             @Override
             public Item[] getItems() {
-                return new Item[]{new Item("my item", 0, 0)};
+                return new Item[]{new Item(name, sellIn, quality)};
             }
         };
         gildedRose.updateQuality();
