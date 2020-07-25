@@ -4,7 +4,11 @@ class GildedRose {
     Item[] items;
 
     public GildedRose() {
-        this.items = ItemService.getItems();
+        this.items = getItems();
+    }
+
+    public Item[] getItems() {
+        return ItemService.getItems();
     }
 
     public void updateQuality() {
