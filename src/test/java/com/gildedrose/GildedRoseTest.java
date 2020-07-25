@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 import org.approvaltests.Approvals;
+import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -9,8 +10,10 @@ public class GildedRoseTest {
 
     @Test
     public void approveGildedRose() {
-        String response = updateQuality("my item", 0, 0);
-        Approvals.verify(response);
+        String[] nameChoices = {"my item"};
+        Integer[] sellInChoices = {0};
+        Integer[] qualityChoices = {0};
+        CombinationApprovals.verifyAllCombinations(this::updateQuality, nameChoices, sellInChoices, qualityChoices);
     }
 
     private String updateQuality(String name, int sellIn, int quality) {
